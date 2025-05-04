@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Google Sans', Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo img {
+            height: 30px;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            background: #f1f3f4;
+            border-radius: 8px;
+            padding: 5px 15px;
+            width: 50%;
+        }
+        .search input {
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 8px;
+            outline: none;
+        }
+        .icons {
+            display: flex;
+            gap: 20px;
+        }
+        main {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 15px;
+        }
+        .compose-btn {
+            background: #c2e7ff;
+            border: none;
+            border-radius: 16px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sidebar-menu {
+            list-style: none;
+        }
+        .sidebar-menu li {
+            padding: 10px;
+            border-radius: 0 20px 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+        .sidebar-menu li:hover {
+            background: #f1f3f4;
+        }
+        .sidebar-menu li.active {
+            background: #d3e3fd;
+            font-weight: bold;
+        }
+        .email-list {
+            flex: 1;
+            border-right: 1px solid #ddd;
+        }
+        .email-toolbar {
+            padding: 10px;
+            display: flex;
+            gap: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .emails {
+            list-style: none;
+        }
+        .email {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 15px;
+            cursor: pointer;
+        }
+        .email:hover {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .email.unread {
+            font-weight: bold;
+        }
+        .email-checkbox {
+            margin-right: 10px;
+        }
+        .email-content {
+            flex: 1;
+        }
+        .email-sender {
+            min-width: 150px;
+        }
+        .email-preview {
+            color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .email-time {
+            color: #666;
+            font-size: 12px;
+        }
+        .email-view {
+            flex: 2;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gmail_2020q4_48dp.png" alt="Gmail">
+            <span>Gmail</span>
+        </div>
+        <div class="search">
+            <span>🔍</span>
+            <input type="text" placeholder="Search mail">
+        </div>
+        <div class="icons">
+            <span>🔄</span>
+            <span>⚙️</span>
+            <span>🧩</span>
+            <span>👤</span>
+        </div>
+    </header>
+    <main>
+        <div class="sidebar">
+            <button class="compose-btn">
+                <span>✏️</span>
+                <span>Compose</span>
+            </button>
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <span>📥</span>
+                    <span>Inbox</span>
+                </li>
+                <li>
+                    <span>⭐</span>
+                    <span>Starred</span>
+                </li>
+                <li>
+                    <span>⏱️</span>
+                    <span>Snoozed</span>
+                </li>
+                <li>
+                    <span>📤</span>
+                    <span>Sent</span>
+                </li>
+            </ul>
+        </div>
+        <div class="email-list">
+            <div class="email-toolbar">
+                <span>☑️</span>
+                <span>↻</span>
+                <span>⋯</span>
+            </div>
+            <ul class="emails">
+                <li class="email unread">
+                    <div class="email-checkbox">
+                        <input type="checkbox">
+                    </div>
+                    <div class="email-sender">GitHub</div>
+                    <div class="email-content">
+                        <div class="email-subject">Your repository has been updated</div>
+                        <div class="email-preview">The repository you're watching has new commits...</div>
+                    </div>
+                    <div class="email-time">10:30 AM</div>
+                </li>
+                <li class="email">
+                    <div class="email-checkbox">
+                        <input type="checkbox">
+                    </div>
+                    <div class="email-sender">LinkedIn</div>
+                    <div class="email-content">
+                        <div class="email-subject">New job opportunities for you</div>
+                        <div class="email-preview">Based on your profile, we found these jobs...</div>
+                    </div>
+                    <div class="email-time">Yesterday</div>
+                </li>
+            </ul>
+        </div>
+        <div class="email-view">
+            <h2>Select an email to view</h2>
+        </div>
+    </main>
+</body>
+</html>
